@@ -4,16 +4,18 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import Guide from '../screen/Guide';
 import Notification from '../screen/Notification';
 import BottomTabNavigator from './BottomTabNavigator';
+import Home from '../screen/Home';
 
 const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigator() {
   return (
-    <Drawer.Navigator initialRouteName="BottomTabNavigator">
+    <Drawer.Navigator initialRouteName="Home" options={{headerShown:false}}>
+     
       <Drawer.Screen
-        name="Dashboard"
-        component={BottomTabNavigator}
-         //options={{ headerShown: false }} // Hide header for this screen
+        name="Home"
+        component={Home}
+        options={{ headerShown: false }} // Hide header for this screen
       />
       <Drawer.Screen
         name="Notification"
