@@ -4,19 +4,17 @@ import Home from '../screen/Home';
 import Setting from '../screen/Setting';
 import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import DrawerNavigator from './DrawerNavigator';
 
 const Tab = createBottomTabNavigator();
 
-export default function BottomTabNavigator({ navigation }) {
+export default function BottomTabNavigator() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator initialRouteName='Home'>
       <Tab.Screen
-        name="DrawerNavigator"
-        component={DrawerNavigator}
-        initialParams={{ navigation }}
+        name="Home"
+        component={Home}
         options={{
-          headerShown:false,
+          headerShown: false,
           tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => (
             <Entypo name="home" color={color} size={size} />
@@ -26,9 +24,8 @@ export default function BottomTabNavigator({ navigation }) {
       <Tab.Screen
         name="Setting"
         component={Setting}
-        initialParams={{ navigation }}
         options={{
-          headerShown:false,
+          headerShown: false,
           tabBarLabel: 'Setting',
           tabBarIcon: ({ color, size }) => (
             <AntDesign name="setting" color={color} size={size} />

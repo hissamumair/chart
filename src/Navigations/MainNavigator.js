@@ -1,20 +1,8 @@
 import React from 'react';
-import BottomTabNavigator from './BottomTabNavigator';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import AuthNavigator from './AuthNavigator';
+import DrawerNavigator from '../Navigations/DrawerNavigator'; // Import DrawerNavigator
+import {NavigationContainer} from '@react-navigation/native';
 
-const MainStack = createNativeStackNavigator();
-export default function Route() {
-  return (
-    <MainStack.Navigator screenOptions={{headerShown: false}}>
-      <MainStack.Screen
-        name="AuthNavigator"
-        component={AuthNavigator}
-      />
-      <MainStack.Screen
-        name="BottomTabNavigator"
-        component={BottomTabNavigator}
-      />
-    </MainStack.Navigator>
-  );
+export default function MainNavigator() {
+  return
+   <DrawerNavigator />;
 }
